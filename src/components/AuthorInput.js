@@ -19,7 +19,9 @@ export class AuthorInput extends Component {
   handleOnSubmit = event => {
     event.preventDefault();
     const author = {...this.state, id: uuid() };
+    // sends the author object to authorsReducer
     this.props.addAuthor(author);
+    // resets the authorName input field
     this.setState({
       authorName: ''
     });
